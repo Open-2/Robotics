@@ -152,7 +152,6 @@ void loop(){
 			Motor.Move(oldlight, correction, 255)
 		}
 		} else{
-			Motor.Move(oldlight, correction, 255)
 			if(currentMillis - previousMillis >=interval){
 				voiding = false;
 			}
