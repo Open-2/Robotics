@@ -149,10 +149,10 @@ void loop(){
 			previousMillis = currentMillis;
 			voiding = true;
 			oldLight = light;
-			Motor.Move(oldlight, correction, -255)
+			Motor.Move(oldlight, correction, 255)
 		}
 		} else{
-			Motor.Move(oldlight, correction, -255)
+			Motor.Move(oldlight, correction, 255)
 			if(currentMillis - previousMillis >=interval){
 				voiding = false;
 			}
