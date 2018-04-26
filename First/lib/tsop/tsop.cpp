@@ -65,7 +65,7 @@ void TSOP::FilterValues(){
   for (int i = 0; i < TSOP_NUM; i++) {
     FILTEREDVAL[i] = TEMPFILTEREDVAL[i];
   }
-  /*
+
   //Filter By Surrounding
   for (int i = 0; i < TSOP_NUM; i++) {
     #if TSOP_FILTER_SURROUNDING
@@ -81,7 +81,7 @@ void TSOP::FilterValues(){
     FILTEREDVAL[i] = temp >> 4;
 
   }
-  */
+
 
   //Sorting TSOP Values
   for (int i = 0; i < TSOP_NUM; i++) {
@@ -133,9 +133,9 @@ void TSOP::GetAngle(int n){
   }
   angle = 360 - angle;
   int mag = pow(vectori * vectori + vectorj * vectorj, 0.5);
-  // Serial.println(mag);
+  Serial.println(mag);
   if (mag < 25) angle = -30;
-//Serial.println(angle);
+Serial.println(angle);
 }
 
 void TSOP::GetStrengthSimple(){

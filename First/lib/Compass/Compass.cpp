@@ -63,7 +63,7 @@ void Compass::updateGyro() {
 }
 
 double Compass::calibrate() {
-    // motorController.brake(); stop robot
+    motorController.brake(); stop robot ?
 
     readGyroscope();
 

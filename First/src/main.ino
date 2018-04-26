@@ -60,8 +60,8 @@ void setup(){
 	} else{
 		lights.SetThresh(999,999,999,999);
 	}
-	//int range = 20;
-	//lights.SetThresh(lights.lightValues[0]+range,lights.lightValues[1]+range,lights.lightValues[2]+range,lights.lightValues[3]+range);
+	int range = 20;
+	lights.SetThresh(lights.lightValues[0]+range,lights.lightValues[1]+range,lights.lightValues[2]+range,lights.lightValues[3]+range);
 }
 
 void loop(){
@@ -78,26 +78,26 @@ void loop(){
 
 
 	int relativeHeading = compass.heading > 180 ? (360 - compass.heading) : -compass.heading;
-	// int correctionRotation = relativeHeading * 3;
+	 int correctionRotation = relativeHeading * 3;
 
 	double diffTime = ((double)(currentMillis - compMillis))/100.0;
 	double difference = ((double)(relativeHeading - previousHeading)) / diffTime;
 	compMillis = currentMillis;
-	//Serial.print((previousHeading-relativeHeading));
-	//Serial.print("\t");
-	// Serial.println(difference);
+	Serial.print((previousHeading-relativeHeading));
+	Serial.print("\t");
+  Serial.println(difference);
 	previousHeading = relativeHeading;
 
 	int correction = round(kp*((double)relativeHeading) + kd*difference);
 
 
-	//Motor.Move(0, correction , 0);
-	// Serial.print(relativeHeading);
-	// Serial.print("\t");
-	// Serial.println(correction);
+	Motor.Move(0, correction , 0);
+	Serial.print(relativeHeading);
+	Serial.print("\t");
+	Serial.println(correction);
 
-	// Serial.println(angle);
-	//Serial.println(relativeHeading);
+	Serial.println(angle);
+	Serial.println(relativeHeading);
 
 	if(!voiding){
 		if (light == -30){
