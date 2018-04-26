@@ -30,7 +30,7 @@ Compass compass;
 LightSensorArray lights;
 
 const int GoalAcc = 7;
-const int MoveSpd = -255;
+const int MoveSpd = 255;
 
 unsigned long previousMillis = 0;
 const long interval = 200;
@@ -149,10 +149,10 @@ void loop(){
       previousMillis = currentMillis;
       voiding = true;
       oldLight = light;
-      Motor.Move(oldLight, correction, 255);
+      Motor.Move(oldLight, correction, -255);
     }
     }else{
-      Motor.Move(oldLight, correction, 255);
+      Motor.Move(oldLight, correction, -255);
       if(currentMillis - previousMillis >= interval){
         voiding = false;
       }
