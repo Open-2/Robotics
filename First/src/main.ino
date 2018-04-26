@@ -30,7 +30,7 @@ Compass compass;
 LightSensorArray lights;
 
 const int GoalAcc = 7;
-const int MoveSpd = 255;
+const int MoveSpd = -255;
 
 unsigned long previousMillis = 0;
 const long interval = 200;
